@@ -1,0 +1,3 @@
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/CMakeFiles/App.dir
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/CMakeFiles/ZERO_CHECK.dir
