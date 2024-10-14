@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/dawn-populate"
+		},
+		{
+			"file" : "C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/77ce119f18eadadfb7f505f91899155b/dawn-populate.rule"
+		},
+		{
+			"file" : "C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/7778376aee1b736823e52d51c2a365bc/dawn-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"dawn-populate"
+		],
+		"name" : "dawn-populate"
+	}
+}

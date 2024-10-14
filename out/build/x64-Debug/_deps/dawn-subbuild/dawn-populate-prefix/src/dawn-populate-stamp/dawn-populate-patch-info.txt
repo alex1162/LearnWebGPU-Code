@@ -1,0 +1,6 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The update step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+command=C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-E;copy;C:/Users/alexp/GitHub/LearnWebGPU-Code/webgpu/cmake/../patch/tools/fetch_dawn_dependencies.py;tools
+work_dir=C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-src

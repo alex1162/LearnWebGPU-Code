@@ -1,0 +1,21 @@
+# ninja log v5
+2	70	7505985482919259	dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-mkdir	d164803fe2ed7cef
+71	60313	7505986085409427	C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-download	32f5b21d6b607024
+2	70	7505985482919259	C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-mkdir	d164803fe2ed7cef
+71	60313	7505986085409427	dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-download	32f5b21d6b607024
+60368	60474	7505986086951335	dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-patch	712a21d0f3bbf6ca
+60313	60368	7505986085919381	dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-update	85e6e41a806b8dfd
+60608	60663	7505986088865272	C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-install	3e183d7989b4e15e
+60529	60607	7505986088320858	dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-build	ba8fd441a72572e1
+60368	60474	7505986086951335	C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-patch	712a21d0f3bbf6ca
+60313	60368	7505986085919381	C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-update	85e6e41a806b8dfd
+60474	60529	7505986087519181	dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-configure	26a2bb963af1ddf3
+60474	60529	7505986087519181	C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-configure	26a2bb963af1ddf3
+60529	60607	7505986088320858	C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-build	ba8fd441a72572e1
+60608	60663	7505986088865272	dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-install	3e183d7989b4e15e
+60663	60715	7505986089419774	dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-test	b4ba24285267559f
+60663	60715	7505986089419774	C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-test	b4ba24285267559f
+60715	60793	7505986090117748	C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-done	a9cf67f0eb5a7d64
+60715	60793	7505986090117748	CMakeFiles/dawn-populate-complete	a9cf67f0eb5a7d64
+60715	60793	7505986090117748	dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-done	a9cf67f0eb5a7d64
+60715	60793	7505986090117748	C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/CMakeFiles/dawn-populate-complete	a9cf67f0eb5a7d64

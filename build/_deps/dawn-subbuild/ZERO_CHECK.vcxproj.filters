@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeFiles\77ce119f18eadadfb7f505f91899155b\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{9B7F7E29-185E-3389-BC34-A433300AD6AE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

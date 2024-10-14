@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeFiles\21e160bcebb574dbd49be3bdb47c30d1\dawn-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeFiles\21e160bcebb574dbd49be3bdb47c30d1\dawn-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeFiles\21e160bcebb574dbd49be3bdb47c30d1\dawn-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeFiles\21e160bcebb574dbd49be3bdb47c30d1\dawn-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeFiles\21e160bcebb574dbd49be3bdb47c30d1\dawn-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeFiles\21e160bcebb574dbd49be3bdb47c30d1\dawn-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeFiles\21e160bcebb574dbd49be3bdb47c30d1\dawn-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeFiles\21e160bcebb574dbd49be3bdb47c30d1\dawn-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeFiles\7778376aee1b736823e52d51c2a365bc\dawn-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeFiles\77ce119f18eadadfb7f505f91899155b\dawn-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\CMakeFiles\dawn-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{9B7F7E29-185E-3389-BC34-A433300AD6AE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "_deps/dawn-build/src/dawn/common",
+		"source" : "out/build/x64-Debug/_deps/dawn-src/src/dawn/common"
+	}
+}

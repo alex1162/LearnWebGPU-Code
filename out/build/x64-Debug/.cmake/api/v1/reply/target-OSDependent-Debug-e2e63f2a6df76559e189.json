@@ -1,0 +1,167 @@
+{
+	"archive" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64",
+				"role" : "flags"
+			}
+		]
+	},
+	"artifacts" : 
+	[
+		{
+			"path" : "_deps/dawn-build/third_party/glslang/glslang/OSDependent/Windows/OSDependentd.lib"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_compile_options",
+			"add_compile_definitions",
+			"add_definitions",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"out/build/x64-Debug/_deps/dawn-src/third_party/glslang/src/glslang/OSDependent/Windows/CMakeLists.txt",
+			"out/build/x64-Debug/_deps/dawn-src/third_party/glslang/src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 34,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 189,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 129,
+				"parent" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 313,
+				"parent" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 134,
+				"parent" : 2
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 36,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS  /MP /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "/D_HAS_EXCEPTIONS=0"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 4,
+					"define" : "ENABLE_HLSL"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "ENABLE_OPT=0"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "GLSLANG_OSINCLUDE_WIN32"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"folder" : 
+	{
+		"name" : "glslang"
+	},
+	"id" : "OSDependent::@eef9554b4d2547c806dd",
+	"name" : "OSDependent",
+	"nameOnDisk" : "OSDependentd.lib",
+	"paths" : 
+	{
+		"build" : "_deps/dawn-build/third_party/glslang/glslang/OSDependent/Windows",
+		"source" : "out/build/x64-Debug/_deps/dawn-src/third_party/glslang/src/glslang/OSDependent/Windows"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 7,
+			"path" : "out/build/x64-Debug/_deps/dawn-src/third_party/glslang/src/glslang/OSDependent/osinclude.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "out/build/x64-Debug/_deps/dawn-src/third_party/glslang/src/glslang/OSDependent/Windows/ossource.cpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

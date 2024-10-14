@@ -1,0 +1,152 @@
+^C:\USERS\ALEXP\GITHUB\LEARNWEBGPU-CODE\BUILD\_DEPS\DAWN-SUBBUILD\CMAKEFILES\21E160BCEBB574DBD49BE3BDB47C30D1\DAWN-POPULATE-MKDIR.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/dawn-populate-prefix/tmp/dawn-populate-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/Debug/dawn-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ALEXP\GITHUB\LEARNWEBGPU-CODE\BUILD\_DEPS\DAWN-SUBBUILD\CMAKEFILES\21E160BCEBB574DBD49BE3BDB47C30D1\DAWN-POPULATE-DOWNLOAD.RULE
+setlocal
+cd C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-subbuild\dawn-populate-prefix\src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+cd C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-src && git init && git fetch --depth=1 https://dawn.googlesource.com/dawn chromium/6512 && git reset --hard FETCH_HEAD
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/Debug/dawn-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ALEXP\GITHUB\LEARNWEBGPU-CODE\BUILD\_DEPS\DAWN-SUBBUILD\CMAKEFILES\21E160BCEBB574DBD49BE3BDB47C30D1\DAWN-POPULATE-UPDATE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/Debug/dawn-populate-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ALEXP\GITHUB\LEARNWEBGPU-CODE\BUILD\_DEPS\DAWN-SUBBUILD\CMAKEFILES\21E160BCEBB574DBD49BE3BDB47C30D1\DAWN-POPULATE-PATCH.RULE
+setlocal
+cd C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/Users/alexp/GitHub/LearnWebGPU-Code/webgpu/cmake/../patch/tools/fetch_dawn_dependencies.py tools
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/Debug/dawn-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ALEXP\GITHUB\LEARNWEBGPU-CODE\BUILD\_DEPS\DAWN-SUBBUILD\CMAKEFILES\21E160BCEBB574DBD49BE3BDB47C30D1\DAWN-POPULATE-CONFIGURE.RULE
+setlocal
+cd C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/Debug/dawn-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ALEXP\GITHUB\LEARNWEBGPU-CODE\BUILD\_DEPS\DAWN-SUBBUILD\CMAKEFILES\21E160BCEBB574DBD49BE3BDB47C30D1\DAWN-POPULATE-BUILD.RULE
+setlocal
+cd C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/Debug/dawn-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ALEXP\GITHUB\LEARNWEBGPU-CODE\BUILD\_DEPS\DAWN-SUBBUILD\CMAKEFILES\21E160BCEBB574DBD49BE3BDB47C30D1\DAWN-POPULATE-INSTALL.RULE
+setlocal
+cd C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/Debug/dawn-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ALEXP\GITHUB\LEARNWEBGPU-CODE\BUILD\_DEPS\DAWN-SUBBUILD\CMAKEFILES\21E160BCEBB574DBD49BE3BDB47C30D1\DAWN-POPULATE-TEST.RULE
+setlocal
+cd C:\Users\alexp\GitHub\LearnWebGPU-Code\build\_deps\dawn-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/Debug/dawn-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ALEXP\GITHUB\LEARNWEBGPU-CODE\BUILD\_DEPS\DAWN-SUBBUILD\CMAKEFILES\7778376AEE1B736823E52D51C2A365BC\DAWN-POPULATE-COMPLETE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/Debug/dawn-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/Debug/dawn-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ALEXP\GITHUB\LEARNWEBGPU-CODE\BUILD\_DEPS\DAWN-SUBBUILD\CMAKEFILES\77CE119F18EADADFB7F505F91899155B\DAWN-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ALEXP\GITHUB\LEARNWEBGPU-CODE\BUILD\_DEPS\DAWN-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild -BC:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild --check-stamp-file C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

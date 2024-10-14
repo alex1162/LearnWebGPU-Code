@@ -1,0 +1,14 @@
+# Target labels
+ dawn-populate
+# Source files and their labels
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/dawn-populate
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/77ce119f18eadadfb7f505f91899155b/dawn-populate.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/7778376aee1b736823e52d51c2a365bc/dawn-populate-complete.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-build.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-configure.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-download.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-install.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-mkdir.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-patch.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-test.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/build/_deps/dawn-subbuild/CMakeFiles/21e160bcebb574dbd49be3bdb47c30d1/dawn-populate-update.rule

@@ -1,0 +1,14 @@
+# Target labels
+ dawn-populate
+# Source files and their labels
+C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/CMakeFiles/dawn-populate
+C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/CMakeFiles/dawn-populate.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/CMakeFiles/dawn-populate-complete.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-build.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-configure.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-download.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-install.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-mkdir.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-patch.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-test.rule
+C:/Users/alexp/GitHub/LearnWebGPU-Code/out/build/x64-Debug/_deps/dawn-subbuild/dawn-populate-prefix/src/dawn-populate-stamp/dawn-populate-update.rule
