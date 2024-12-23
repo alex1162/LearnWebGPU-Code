@@ -23,7 +23,7 @@ add_executable(App
     ResourceManager.cpp
 )
 
-target_link_libraries(App PRIVATE glfw webgpu glfw3webgpu)
+target_link_libraries(App PRIVATE glfw webgpu glfw3webgpu resources)
 
 target_copy_webgpu_binaries(App)
 
