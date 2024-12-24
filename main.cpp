@@ -60,6 +60,16 @@ private:
 	// Have the compiler check byte alignment
 	static_assert(sizeof(MyUniforms) % 16 == 0);
 
+	/**
+	 * A structure that describes the data layout in the vertex buffer
+	 * We do not instantiate it but use it in `sizeof` and `offsetof`
+	 */
+	struct VertexAttributes {
+		vec3 position;
+		vec3 normal;
+		vec3 color;
+	};
+
 private:
 	WGPUTextureView GetNextSurfaceTextureView();
 	WGPURequiredLimits GetRequiredLimits(WGPUAdapter adapter) const;
@@ -285,28 +295,30 @@ void Application::InitializePipeline() {
 	// We use one vertex buffer
 	WGPUVertexBufferLayout vertexBufferLayout{};
 	// We now have 2 attributes
-	std::vector<WGPUVertexAttribute> vertexAttribs(2);
+	std::vector<WGPUVertexAttribute> vertexAttribs(3);
+	//                                             ^ This was a 2
 
-	// Describe the position attribute
-	vertexAttribs[0].shaderLocation = 0; // @location(0)
 	// Position attribute
+	vertexAttribs[0].shaderLocation = 0;
 	vertexAttribs[0].format = WGPUVertexFormat_Float32x3;
-	//                                                 ^ This was a 2
-	vertexAttribs[0].offset = 0;
+	vertexAttribs[0].offset = offsetof(VertexAttributes, position);
 
-	// Describe the color attribute
-	vertexAttribs[1].shaderLocation = 1; // @location(1)
-	vertexAttribs[1].format = WGPUVertexFormat_Float32x3; // different type!
+	// Normal attribute
+	vertexAttribs[1].shaderLocation = 1;
+	vertexAttribs[1].format = WGPUVertexFormat_Float32x3;
+	vertexAttribs[1].offset = offsetof(VertexAttributes, normal);
+
 	// Color attribute
-	vertexAttribs[1].offset = 3 * sizeof(float);
-	//                        ^ This was a 2
+	vertexAttribs[2].shaderLocation = 2;
+	vertexAttribs[2].format = WGPUVertexFormat_Float32x3;
+	vertexAttribs[2].offset = offsetof(VertexAttributes, color);
 
 	vertexBufferLayout.attributeCount = static_cast<uint32_t>(vertexAttribs.size());
 	vertexBufferLayout.attributes = vertexAttribs.data();
 
 	// The buffer stride
-	vertexBufferLayout.arrayStride = 6 * sizeof(float);
-	//                               ^ This was a 5
+	vertexBufferLayout.arrayStride = sizeof(VertexAttributes);
+	//                               ^^^^^^^^^^^^^^^^^^^^^^^^ This was 6 * sizeof(float)
 	vertexBufferLayout.stepMode = WGPUVertexStepMode_Vertex;
 
 	pipelineDesc.vertex.bufferCount = 1;
@@ -452,7 +464,8 @@ void Application::InitializeBuffers() {
 	std::vector<uint16_t> indexData;
 
 	// Here we use the new 'loadGeometry' function:
-	bool success = ResourceManager::loadGeometry(RESOURCE_DIR "/pyramid.txt", pointData, indexData, 3 /* dimensions */);
+	bool success = ResourceManager::loadGeometry(RESOURCE_DIR "/pyramid.txt", pointData, indexData, 6);
+	//                                                                                              ^ This was a 3
 
 	// Check for errors
 	if (!success) {
@@ -736,17 +749,22 @@ WGPURequiredLimits Application::GetRequiredLimits(WGPUAdapter adapter) const {
 	setDefault(requiredLimits.limits);
 
 	// We use at most 2 vertex attributes
-	requiredLimits.limits.maxVertexAttributes = 2;
+	requiredLimits.limits.maxVertexAttributes = 3;
+	//                                          ^ This was a 2
 	// We should also tell that we use 1 vertex buffers
 	requiredLimits.limits.maxVertexBuffers = 1;
 	// Maximum size of a buffer is 6 vertices of 5 float each
-	requiredLimits.limits.maxBufferSize = 15 * 5 * sizeof(float);
+	requiredLimits.limits.maxBufferSize = 16 * sizeof(VertexAttributes);
+	//                                         ^^^^^^^^^^^^^^^^^^^^^^^^ This was 6 * sizeof(float)
+	//                                    ^^ This was 15
 	// Maximum stride between 2 consecutive vertices in the vertex buffer
-	requiredLimits.limits.maxVertexBufferArrayStride = 6 * sizeof(float);
-	//                                                 ^ This was a 5
+	requiredLimits.limits.maxVertexBufferArrayStride = sizeof(VertexAttributes);
+	//                                                        ^^^^^^^^^^^^^^^^^^^^^^^^ This was 6 * sizeof(float)
+
 
 	// There is a maximum of 3 float forwarded from vertex to fragment shader
-	requiredLimits.limits.maxInterStageShaderComponents = 3;
+	requiredLimits.limits.maxInterStageShaderComponents = 6;
+	//                                                    ^ This was a 3
 
 	// We use at most 1 bind group for now
 	requiredLimits.limits.maxBindGroups = 1;
