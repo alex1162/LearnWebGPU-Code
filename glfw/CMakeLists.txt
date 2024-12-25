@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 cmake_minimum_required(VERSION 3.0...3.20 FATAL_ERROR)
 
 project(GLFW VERSION 3.3.8 LANGUAGES C)
@@ -7,6 +8,11 @@ set(CMAKE_LEGACY_CYGWIN_WIN32 OFF)
 if (POLICY CMP0054)
     cmake_policy(SET CMP0054 NEW)
 endif()
+=======
+cmake_minimum_required(VERSION 3.4...3.28 FATAL_ERROR)
+
+project(GLFW VERSION 3.4.0 LANGUAGES C)
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
 if (POLICY CMP0069)
     cmake_policy(SET CMP0069 NEW)
@@ -18,16 +24,27 @@ endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
+<<<<<<< HEAD
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 option(GLFW_BUILD_EXAMPLES "Build the GLFW example programs" OFF)
 option(GLFW_BUILD_TESTS "Build the GLFW test programs" OFF)
 option(GLFW_BUILD_DOCS "Build the GLFW documentation" OFF)
 option(GLFW_INSTALL "Generate installation target" OFF)
 option(GLFW_VULKAN_STATIC "Assume the Vulkan loader is linked with the application" OFF)
+=======
+string(COMPARE EQUAL "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_SOURCE_DIR}" GLFW_STANDALONE)
+
+option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
+option(GLFW_BUILD_EXAMPLES "Build the GLFW example programs" ${GLFW_STANDALONE})
+option(GLFW_BUILD_TESTS "Build the GLFW test programs" ${GLFW_STANDALONE})
+option(GLFW_BUILD_DOCS "Build the GLFW documentation" OFF)
+option(GLFW_INSTALL "Generate installation target" OFF)
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
 include(GNUInstallDirs)
 include(CMakeDependentOption)
 
+<<<<<<< HEAD
 cmake_dependent_option(GLFW_USE_OSMESA "Use OSMesa for offscreen context creation" OFF
                        "UNIX" OFF)
 cmake_dependent_option(GLFW_USE_HYBRID_HPG "Force use of high-performance GPU on hybrid systems" OFF
@@ -55,21 +72,71 @@ if (GLFW_VULKAN_STATIC)
         message(FATAL_ERROR "You are trying to link the Vulkan loader static library into the GLFW shared library")
     endif()
     set(_GLFW_VULKAN_STATIC 1)
+=======
+if (GLFW_USE_OSMESA)
+    message(FATAL_ERROR "GLFW_USE_OSMESA has been removed; set the GLFW_PLATFORM init hint")
+endif()
+
+if (DEFINED GLFW_USE_WAYLAND AND UNIX AND NOT APPLE)
+    message(FATAL_ERROR
+        "GLFW_USE_WAYLAND has been removed; delete the CMake cache and set GLFW_BUILD_WAYLAND and GLFW_BUILD_X11 instead")
+endif()
+
+cmake_dependent_option(GLFW_BUILD_WIN32 "Build support for Win32" ON "WIN32" OFF)
+cmake_dependent_option(GLFW_BUILD_COCOA "Build support for Cocoa" ON "APPLE" OFF)
+cmake_dependent_option(GLFW_BUILD_X11 "Build support for X11" ON "UNIX;NOT APPLE" OFF)
+cmake_dependent_option(GLFW_BUILD_WAYLAND "Build support for Wayland" ON "UNIX;NOT APPLE" OFF)
+
+cmake_dependent_option(GLFW_USE_HYBRID_HPG "Force use of high-performance GPU on hybrid systems" OFF
+                       "WIN32" OFF)
+cmake_dependent_option(USE_MSVC_RUNTIME_LIBRARY_DLL "Use MSVC runtime library DLL" ON
+                       "MSVC" OFF)
+
+set(GLFW_LIBRARY_TYPE "${GLFW_LIBRARY_TYPE}" CACHE STRING
+    "Library type override for GLFW (SHARED, STATIC, OBJECT, or empty to follow BUILD_SHARED_LIBS)")
+
+if (GLFW_LIBRARY_TYPE)
+    if (GLFW_LIBRARY_TYPE STREQUAL "SHARED")
+        set(GLFW_BUILD_SHARED_LIBRARY TRUE)
+    else()
+        set(GLFW_BUILD_SHARED_LIBRARY FALSE)
+    endif()
+else()
+    set(GLFW_BUILD_SHARED_LIBRARY ${BUILD_SHARED_LIBS})
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 endif()
 
 list(APPEND CMAKE_MODULE_PATH "${GLFW_SOURCE_DIR}/CMake/modules")
 
 find_package(Threads REQUIRED)
 
+<<<<<<< HEAD
 if (GLFW_BUILD_DOCS)
     set(DOXYGEN_SKIP_DOT TRUE)
     find_package(Doxygen)
+=======
+#--------------------------------------------------------------------
+# Report backend selection
+#--------------------------------------------------------------------
+if (GLFW_BUILD_WIN32)
+    message(STATUS "Including Win32 support")
+endif()
+if (GLFW_BUILD_COCOA)
+    message(STATUS "Including Cocoa support")
+endif()
+if (GLFW_BUILD_WAYLAND)
+    message(STATUS "Including Wayland support")
+endif()
+if (GLFW_BUILD_X11)
+    message(STATUS "Including X11 support")
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 endif()
 
 #--------------------------------------------------------------------
 # Apply Microsoft C runtime library option
 # This is here because it also applies to tests and examples
 #--------------------------------------------------------------------
+<<<<<<< HEAD
 if (MSVC)
     if (MSVC90)
         # Workaround for VS 2008 not shipping with the DirectX 9 SDK
@@ -83,6 +150,8 @@ if (MSVC)
     endif()
 endif()
 
+=======
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 if (MSVC AND NOT USE_MSVC_RUNTIME_LIBRARY_DLL)
     if (CMAKE_VERSION VERSION_LESS 3.15)
         foreach (flag CMAKE_C_FLAGS
@@ -104,6 +173,7 @@ if (MSVC AND NOT USE_MSVC_RUNTIME_LIBRARY_DLL)
     endif()
 endif()
 
+<<<<<<< HEAD
 if (MINGW)
     # Workaround for legacy MinGW not providing XInput and DirectInput
     include(CheckIncludeFile)
@@ -316,6 +386,8 @@ foreach(arg ${glfw_PKG_LIBS})
     set(GLFW_PKG_LIBS "${GLFW_PKG_LIBS} ${arg}")
 endforeach()
 
+=======
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 #--------------------------------------------------------------------
 # Create generated files
 #--------------------------------------------------------------------
@@ -323,7 +395,11 @@ include(CMakePackageConfigHelpers)
 
 set(GLFW_CONFIG_PATH "${CMAKE_INSTALL_LIBDIR}/cmake/glfw3")
 
+<<<<<<< HEAD
 configure_package_config_file(src/glfw3Config.cmake.in
+=======
+configure_package_config_file(CMake/glfw3Config.cmake.in
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
                               src/glfw3Config.cmake
                               INSTALL_DESTINATION "${GLFW_CONFIG_PATH}"
                               NO_CHECK_REQUIRED_COMPONENTS_MACRO)
@@ -332,10 +408,13 @@ write_basic_package_version_file(src/glfw3ConfigVersion.cmake
                                  VERSION ${GLFW_VERSION}
                                  COMPATIBILITY SameMajorVersion)
 
+<<<<<<< HEAD
 configure_file(src/glfw_config.h.in src/glfw_config.h @ONLY)
 
 configure_file(src/glfw3.pc.in src/glfw3.pc @ONLY)
 
+=======
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 #--------------------------------------------------------------------
 # Add subdirectories
 #--------------------------------------------------------------------
@@ -349,7 +428,11 @@ if (GLFW_BUILD_TESTS)
     add_subdirectory(tests)
 endif()
 
+<<<<<<< HEAD
 if (DOXYGEN_FOUND AND GLFW_BUILD_DOCS)
+=======
+if (GLFW_BUILD_DOCS)
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
     add_subdirectory(docs)
 endif()
 
@@ -373,7 +456,11 @@ if (GLFW_INSTALL)
 
     # Only generate this target if no higher-level project already has
     if (NOT TARGET uninstall)
+<<<<<<< HEAD
         configure_file(cmake_uninstall.cmake.in
+=======
+        configure_file(CMake/cmake_uninstall.cmake.in
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
                        cmake_uninstall.cmake IMMEDIATE @ONLY)
 
         add_custom_target(uninstall

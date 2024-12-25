@@ -1,5 +1,9 @@
 //========================================================================
+<<<<<<< HEAD
 // GLFW 3.3 OSMesa - www.glfw.org
+=======
+// GLFW 3.4 OSMesa - www.glfw.org
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 //------------------------------------------------------------------------
 // Copyright (c) 2016 Google Inc.
 // Copyright (c) 2016-2017 Camilla Löwy <elmindreda@glfw.org>
@@ -24,32 +28,51 @@
 //    distribution.
 //
 //========================================================================
+<<<<<<< HEAD
 // Please use C89 style variable declarations in this file because VS 2010
 //========================================================================
+=======
+
+#include "internal.h"
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
 
+<<<<<<< HEAD
 #include "internal.h"
 
 
+=======
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 static void makeContextCurrentOSMesa(_GLFWwindow* window)
 {
     if (window)
     {
         int width, height;
+<<<<<<< HEAD
         _glfwPlatformGetFramebufferSize(window, &width, &height);
+=======
+        _glfw.platform.getFramebufferSize(window, &width, &height);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
         // Check to see if we need to allocate a new buffer
         if ((window->context.osmesa.buffer == NULL) ||
             (width != window->context.osmesa.width) ||
             (height != window->context.osmesa.height))
         {
+<<<<<<< HEAD
             free(window->context.osmesa.buffer);
 
             // Allocate the new buffer (width * height * 8-bit RGBA)
             window->context.osmesa.buffer = calloc(4, (size_t) width * height);
+=======
+            _glfw_free(window->context.osmesa.buffer);
+
+            // Allocate the new buffer (width * height * 8-bit RGBA)
+            window->context.osmesa.buffer = _glfw_calloc(4, (size_t) width * height);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
             window->context.osmesa.width  = width;
             window->context.osmesa.height = height;
         }
@@ -83,7 +106,11 @@ static void destroyContextOSMesa(_GLFWwindow* window)
 
     if (window->context.osmesa.buffer)
     {
+<<<<<<< HEAD
         free(window->context.osmesa.buffer);
+=======
+        _glfw_free(window->context.osmesa.buffer);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
         window->context.osmesa.width = 0;
         window->context.osmesa.height = 0;
     }
@@ -138,7 +165,11 @@ GLFWbool _glfwInitOSMesa(void)
 
     for (i = 0;  sonames[i];  i++)
     {
+<<<<<<< HEAD
         _glfw.osmesa.handle = _glfw_dlopen(sonames[i]);
+=======
+        _glfw.osmesa.handle = _glfwPlatformLoadModule(sonames[i]);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
         if (_glfw.osmesa.handle)
             break;
     }
@@ -150,6 +181,7 @@ GLFWbool _glfwInitOSMesa(void)
     }
 
     _glfw.osmesa.CreateContextExt = (PFN_OSMesaCreateContextExt)
+<<<<<<< HEAD
         _glfw_dlsym(_glfw.osmesa.handle, "OSMesaCreateContextExt");
     _glfw.osmesa.CreateContextAttribs = (PFN_OSMesaCreateContextAttribs)
         _glfw_dlsym(_glfw.osmesa.handle, "OSMesaCreateContextAttribs");
@@ -163,6 +195,21 @@ GLFWbool _glfwInitOSMesa(void)
         _glfw_dlsym(_glfw.osmesa.handle, "OSMesaGetDepthBuffer");
     _glfw.osmesa.GetProcAddress = (PFN_OSMesaGetProcAddress)
         _glfw_dlsym(_glfw.osmesa.handle, "OSMesaGetProcAddress");
+=======
+        _glfwPlatformGetModuleSymbol(_glfw.osmesa.handle, "OSMesaCreateContextExt");
+    _glfw.osmesa.CreateContextAttribs = (PFN_OSMesaCreateContextAttribs)
+        _glfwPlatformGetModuleSymbol(_glfw.osmesa.handle, "OSMesaCreateContextAttribs");
+    _glfw.osmesa.DestroyContext = (PFN_OSMesaDestroyContext)
+        _glfwPlatformGetModuleSymbol(_glfw.osmesa.handle, "OSMesaDestroyContext");
+    _glfw.osmesa.MakeCurrent = (PFN_OSMesaMakeCurrent)
+        _glfwPlatformGetModuleSymbol(_glfw.osmesa.handle, "OSMesaMakeCurrent");
+    _glfw.osmesa.GetColorBuffer = (PFN_OSMesaGetColorBuffer)
+        _glfwPlatformGetModuleSymbol(_glfw.osmesa.handle, "OSMesaGetColorBuffer");
+    _glfw.osmesa.GetDepthBuffer = (PFN_OSMesaGetDepthBuffer)
+        _glfwPlatformGetModuleSymbol(_glfw.osmesa.handle, "OSMesaGetDepthBuffer");
+    _glfw.osmesa.GetProcAddress = (PFN_OSMesaGetProcAddress)
+        _glfwPlatformGetModuleSymbol(_glfw.osmesa.handle, "OSMesaGetProcAddress");
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
     if (!_glfw.osmesa.CreateContextExt ||
         !_glfw.osmesa.DestroyContext ||
@@ -185,12 +232,20 @@ void _glfwTerminateOSMesa(void)
 {
     if (_glfw.osmesa.handle)
     {
+<<<<<<< HEAD
         _glfw_dlclose(_glfw.osmesa.handle);
+=======
+        _glfwPlatformFreeModule(_glfw.osmesa.handle);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
         _glfw.osmesa.handle = NULL;
     }
 }
 
+<<<<<<< HEAD
 #define setAttrib(a, v) \
+=======
+#define SET_ATTRIB(a, v) \
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 { \
     assert(((size_t) index + 1) < sizeof(attribs) / sizeof(attribs[0])); \
     attribs[index++] = a; \
@@ -221,6 +276,7 @@ GLFWbool _glfwCreateContextOSMesa(_GLFWwindow* window,
     {
         int index = 0, attribs[40];
 
+<<<<<<< HEAD
         setAttrib(OSMESA_FORMAT, OSMESA_RGBA);
         setAttrib(OSMESA_DEPTH_BITS, fbconfig->depthBits);
         setAttrib(OSMESA_STENCIL_BITS, fbconfig->stencilBits);
@@ -233,12 +289,31 @@ GLFWbool _glfwCreateContextOSMesa(_GLFWwindow* window,
         else if (ctxconfig->profile == GLFW_OPENGL_COMPAT_PROFILE)
         {
             setAttrib(OSMESA_PROFILE, OSMESA_COMPAT_PROFILE);
+=======
+        SET_ATTRIB(OSMESA_FORMAT, OSMESA_RGBA);
+        SET_ATTRIB(OSMESA_DEPTH_BITS, fbconfig->depthBits);
+        SET_ATTRIB(OSMESA_STENCIL_BITS, fbconfig->stencilBits);
+        SET_ATTRIB(OSMESA_ACCUM_BITS, accumBits);
+
+        if (ctxconfig->profile == GLFW_OPENGL_CORE_PROFILE)
+        {
+            SET_ATTRIB(OSMESA_PROFILE, OSMESA_CORE_PROFILE);
+        }
+        else if (ctxconfig->profile == GLFW_OPENGL_COMPAT_PROFILE)
+        {
+            SET_ATTRIB(OSMESA_PROFILE, OSMESA_COMPAT_PROFILE);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
         }
 
         if (ctxconfig->major != 1 || ctxconfig->minor != 0)
         {
+<<<<<<< HEAD
             setAttrib(OSMESA_CONTEXT_MAJOR_VERSION, ctxconfig->major);
             setAttrib(OSMESA_CONTEXT_MINOR_VERSION, ctxconfig->minor);
+=======
+            SET_ATTRIB(OSMESA_CONTEXT_MAJOR_VERSION, ctxconfig->major);
+            SET_ATTRIB(OSMESA_CONTEXT_MINOR_VERSION, ctxconfig->minor);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
         }
 
         if (ctxconfig->forward)
@@ -248,7 +323,11 @@ GLFWbool _glfwCreateContextOSMesa(_GLFWwindow* window,
             return GLFW_FALSE;
         }
 
+<<<<<<< HEAD
         setAttrib(0, 0);
+=======
+        SET_ATTRIB(0, 0);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
         window->context.osmesa.handle =
             OSMesaCreateContextAttribs(attribs, share);
@@ -287,7 +366,11 @@ GLFWbool _glfwCreateContextOSMesa(_GLFWwindow* window,
     return GLFW_TRUE;
 }
 
+<<<<<<< HEAD
 #undef setAttrib
+=======
+#undef SET_ATTRIB
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
 
 //////////////////////////////////////////////////////////////////////////

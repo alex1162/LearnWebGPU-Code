@@ -1,5 +1,9 @@
 //========================================================================
+<<<<<<< HEAD
 // GLFW 3.3 - www.glfw.org
+=======
+// GLFW 3.4 - www.glfw.org
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 //------------------------------------------------------------------------
 // Copyright (c) 2006-2017 Camilla Löwy <elmindreda@glfw.org>
 //
@@ -24,8 +28,16 @@
 //
 //========================================================================
 
+<<<<<<< HEAD
 #define _GLFW_PLATFORM_JOYSTICK_STATE         struct { int dummyJoystick; }
 #define _GLFW_PLATFORM_LIBRARY_JOYSTICK_STATE struct { int dummyLibraryJoystick; }
 
 #define _GLFW_PLATFORM_MAPPING_NAME ""
+=======
+GLFWbool _glfwInitJoysticksNull(void);
+void _glfwTerminateJoysticksNull(void);
+GLFWbool _glfwPollJoystickNull(_GLFWjoystick* js, int mode);
+const char* _glfwGetMappingNameNull(void);
+void _glfwUpdateGamepadGUIDNull(char* guid);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 

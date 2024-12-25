@@ -1,5 +1,9 @@
 //========================================================================
+<<<<<<< HEAD
 // GLFW 3.3 Win32 - www.glfw.org
+=======
+// GLFW 3.4 Win32 - www.glfw.org
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 //------------------------------------------------------------------------
 // Copyright (c) 2002-2006 Marcus Geelnard
 // Copyright (c) 2006-2019 Camilla Löwy <elmindreda@glfw.org>
@@ -24,6 +28,7 @@
 //    distribution.
 //
 //========================================================================
+<<<<<<< HEAD
 // Please use C89 style variable declarations in this file because VS 2010
 //========================================================================
 
@@ -31,6 +36,14 @@
 
 #include <stdlib.h>
 #include <malloc.h>
+=======
+
+#include "internal.h"
+
+#if defined(_GLFW_WIN32)
+
+#include <stdlib.h>
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
 static const GUID _glfw_GUID_DEVINTERFACE_HID =
     {0x4d1e55b2,0xf16f,0x11cf,{0x88,0xcb,0x00,0x11,0x11,0x00,0x00,0x30}};
@@ -82,7 +95,11 @@ static GLFWbool loadLibraries(void)
         return GLFW_FALSE;
     }
 
+<<<<<<< HEAD
     _glfw.win32.user32.instance = LoadLibraryA("user32.dll");
+=======
+    _glfw.win32.user32.instance = _glfwPlatformLoadModule("user32.dll");
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
     if (!_glfw.win32.user32.instance)
     {
         _glfwInputErrorWin32(GLFW_PLATFORM_ERROR,
@@ -91,6 +108,7 @@ static GLFWbool loadLibraries(void)
     }
 
     _glfw.win32.user32.SetProcessDPIAware_ = (PFN_SetProcessDPIAware)
+<<<<<<< HEAD
         GetProcAddress(_glfw.win32.user32.instance, "SetProcessDPIAware");
     _glfw.win32.user32.ChangeWindowMessageFilterEx_ = (PFN_ChangeWindowMessageFilterEx)
         GetProcAddress(_glfw.win32.user32.instance, "ChangeWindowMessageFilterEx");
@@ -110,6 +128,27 @@ static GLFWbool loadLibraries(void)
     {
         _glfw.win32.dinput8.Create = (PFN_DirectInput8Create)
             GetProcAddress(_glfw.win32.dinput8.instance, "DirectInput8Create");
+=======
+        _glfwPlatformGetModuleSymbol(_glfw.win32.user32.instance, "SetProcessDPIAware");
+    _glfw.win32.user32.ChangeWindowMessageFilterEx_ = (PFN_ChangeWindowMessageFilterEx)
+        _glfwPlatformGetModuleSymbol(_glfw.win32.user32.instance, "ChangeWindowMessageFilterEx");
+    _glfw.win32.user32.EnableNonClientDpiScaling_ = (PFN_EnableNonClientDpiScaling)
+        _glfwPlatformGetModuleSymbol(_glfw.win32.user32.instance, "EnableNonClientDpiScaling");
+    _glfw.win32.user32.SetProcessDpiAwarenessContext_ = (PFN_SetProcessDpiAwarenessContext)
+        _glfwPlatformGetModuleSymbol(_glfw.win32.user32.instance, "SetProcessDpiAwarenessContext");
+    _glfw.win32.user32.GetDpiForWindow_ = (PFN_GetDpiForWindow)
+        _glfwPlatformGetModuleSymbol(_glfw.win32.user32.instance, "GetDpiForWindow");
+    _glfw.win32.user32.AdjustWindowRectExForDpi_ = (PFN_AdjustWindowRectExForDpi)
+        _glfwPlatformGetModuleSymbol(_glfw.win32.user32.instance, "AdjustWindowRectExForDpi");
+    _glfw.win32.user32.GetSystemMetricsForDpi_ = (PFN_GetSystemMetricsForDpi)
+        _glfwPlatformGetModuleSymbol(_glfw.win32.user32.instance, "GetSystemMetricsForDpi");
+
+    _glfw.win32.dinput8.instance = _glfwPlatformLoadModule("dinput8.dll");
+    if (_glfw.win32.dinput8.instance)
+    {
+        _glfw.win32.dinput8.Create = (PFN_DirectInput8Create)
+            _glfwPlatformGetModuleSymbol(_glfw.win32.dinput8.instance, "DirectInput8Create");
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
     }
 
     {
@@ -126,6 +165,7 @@ static GLFWbool loadLibraries(void)
 
         for (i = 0;  names[i];  i++)
         {
+<<<<<<< HEAD
             _glfw.win32.xinput.instance = LoadLibraryA(names[i]);
             if (_glfw.win32.xinput.instance)
             {
@@ -133,12 +173,22 @@ static GLFWbool loadLibraries(void)
                     GetProcAddress(_glfw.win32.xinput.instance, "XInputGetCapabilities");
                 _glfw.win32.xinput.GetState = (PFN_XInputGetState)
                     GetProcAddress(_glfw.win32.xinput.instance, "XInputGetState");
+=======
+            _glfw.win32.xinput.instance = _glfwPlatformLoadModule(names[i]);
+            if (_glfw.win32.xinput.instance)
+            {
+                _glfw.win32.xinput.GetCapabilities = (PFN_XInputGetCapabilities)
+                    _glfwPlatformGetModuleSymbol(_glfw.win32.xinput.instance, "XInputGetCapabilities");
+                _glfw.win32.xinput.GetState = (PFN_XInputGetState)
+                    _glfwPlatformGetModuleSymbol(_glfw.win32.xinput.instance, "XInputGetState");
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
                 break;
             }
         }
     }
 
+<<<<<<< HEAD
     _glfw.win32.dwmapi.instance = LoadLibraryA("dwmapi.dll");
     if (_glfw.win32.dwmapi.instance)
     {
@@ -166,6 +216,35 @@ static GLFWbool loadLibraries(void)
     {
         _glfw.win32.ntdll.RtlVerifyVersionInfo_ = (PFN_RtlVerifyVersionInfo)
             GetProcAddress(_glfw.win32.ntdll.instance, "RtlVerifyVersionInfo");
+=======
+    _glfw.win32.dwmapi.instance = _glfwPlatformLoadModule("dwmapi.dll");
+    if (_glfw.win32.dwmapi.instance)
+    {
+        _glfw.win32.dwmapi.IsCompositionEnabled = (PFN_DwmIsCompositionEnabled)
+            _glfwPlatformGetModuleSymbol(_glfw.win32.dwmapi.instance, "DwmIsCompositionEnabled");
+        _glfw.win32.dwmapi.Flush = (PFN_DwmFlush)
+            _glfwPlatformGetModuleSymbol(_glfw.win32.dwmapi.instance, "DwmFlush");
+        _glfw.win32.dwmapi.EnableBlurBehindWindow = (PFN_DwmEnableBlurBehindWindow)
+            _glfwPlatformGetModuleSymbol(_glfw.win32.dwmapi.instance, "DwmEnableBlurBehindWindow");
+        _glfw.win32.dwmapi.GetColorizationColor = (PFN_DwmGetColorizationColor)
+            _glfwPlatformGetModuleSymbol(_glfw.win32.dwmapi.instance, "DwmGetColorizationColor");
+    }
+
+    _glfw.win32.shcore.instance = _glfwPlatformLoadModule("shcore.dll");
+    if (_glfw.win32.shcore.instance)
+    {
+        _glfw.win32.shcore.SetProcessDpiAwareness_ = (PFN_SetProcessDpiAwareness)
+            _glfwPlatformGetModuleSymbol(_glfw.win32.shcore.instance, "SetProcessDpiAwareness");
+        _glfw.win32.shcore.GetDpiForMonitor_ = (PFN_GetDpiForMonitor)
+            _glfwPlatformGetModuleSymbol(_glfw.win32.shcore.instance, "GetDpiForMonitor");
+    }
+
+    _glfw.win32.ntdll.instance = _glfwPlatformLoadModule("ntdll.dll");
+    if (_glfw.win32.ntdll.instance)
+    {
+        _glfw.win32.ntdll.RtlVerifyVersionInfo_ = (PFN_RtlVerifyVersionInfo)
+            _glfwPlatformGetModuleSymbol(_glfw.win32.ntdll.instance, "RtlVerifyVersionInfo");
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
     }
 
     return GLFW_TRUE;
@@ -176,6 +255,7 @@ static GLFWbool loadLibraries(void)
 static void freeLibraries(void)
 {
     if (_glfw.win32.xinput.instance)
+<<<<<<< HEAD
         FreeLibrary(_glfw.win32.xinput.instance);
 
     if (_glfw.win32.dinput8.instance)
@@ -192,6 +272,24 @@ static void freeLibraries(void)
 
     if (_glfw.win32.ntdll.instance)
         FreeLibrary(_glfw.win32.ntdll.instance);
+=======
+        _glfwPlatformFreeModule(_glfw.win32.xinput.instance);
+
+    if (_glfw.win32.dinput8.instance)
+        _glfwPlatformFreeModule(_glfw.win32.dinput8.instance);
+
+    if (_glfw.win32.user32.instance)
+        _glfwPlatformFreeModule(_glfw.win32.user32.instance);
+
+    if (_glfw.win32.dwmapi.instance)
+        _glfwPlatformFreeModule(_glfw.win32.dwmapi.instance);
+
+    if (_glfw.win32.shcore.instance)
+        _glfwPlatformFreeModule(_glfw.win32.shcore.instance);
+
+    if (_glfw.win32.ntdll.instance)
+        _glfwPlatformFreeModule(_glfw.win32.ntdll.instance);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 }
 
 // Create key code translation tables
@@ -332,15 +430,74 @@ static void createKeyTables(void)
     }
 }
 
+<<<<<<< HEAD
+=======
+// Window procedure for the hidden helper window
+//
+static LRESULT CALLBACK helperWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    switch (uMsg)
+    {
+        case WM_DISPLAYCHANGE:
+            _glfwPollMonitorsWin32();
+            break;
+
+        case WM_DEVICECHANGE:
+        {
+            if (!_glfw.joysticksInitialized)
+                break;
+
+            if (wParam == DBT_DEVICEARRIVAL)
+            {
+                DEV_BROADCAST_HDR* dbh = (DEV_BROADCAST_HDR*) lParam;
+                if (dbh && dbh->dbch_devicetype == DBT_DEVTYP_DEVICEINTERFACE)
+                    _glfwDetectJoystickConnectionWin32();
+            }
+            else if (wParam == DBT_DEVICEREMOVECOMPLETE)
+            {
+                DEV_BROADCAST_HDR* dbh = (DEV_BROADCAST_HDR*) lParam;
+                if (dbh && dbh->dbch_devicetype == DBT_DEVTYP_DEVICEINTERFACE)
+                    _glfwDetectJoystickDisconnectionWin32();
+            }
+
+            break;
+        }
+    }
+
+    return DefWindowProcW(hWnd, uMsg, wParam, lParam);
+}
+
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 // Creates a dummy window for behind-the-scenes work
 //
 static GLFWbool createHelperWindow(void)
 {
     MSG msg;
+<<<<<<< HEAD
 
     _glfw.win32.helperWindowHandle =
         CreateWindowExW(WS_EX_OVERLAPPEDWINDOW,
                         _GLFW_WNDCLASSNAME,
+=======
+    WNDCLASSEXW wc = { sizeof(wc) };
+
+    wc.style         = CS_OWNDC;
+    wc.lpfnWndProc   = (WNDPROC) helperWindowProc;
+    wc.hInstance     = _glfw.win32.instance;
+    wc.lpszClassName = L"GLFW3 Helper";
+
+    _glfw.win32.helperWindowClass = RegisterClassExW(&wc);
+    if (!_glfw.win32.helperWindowClass)
+    {
+        _glfwInputErrorWin32(GLFW_PLATFORM_ERROR,
+                             "Win32: Failed to register helper window class");
+        return GLFW_FALSE;
+    }
+
+    _glfw.win32.helperWindowHandle =
+        CreateWindowExW(WS_EX_OVERLAPPEDWINDOW,
+                        MAKEINTATOM(_glfw.win32.helperWindowClass),
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
                         L"GLFW message window",
                         WS_CLIPSIBLINGS | WS_CLIPCHILDREN,
                         0, 0, 1, 1,
@@ -382,7 +539,10 @@ static GLFWbool createHelperWindow(void)
    return GLFW_TRUE;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 //////////////////////////////////////////////////////////////////////////
 //////                       GLFW internal API                      //////
 //////////////////////////////////////////////////////////////////////////
@@ -402,13 +562,21 @@ WCHAR* _glfwCreateWideStringFromUTF8Win32(const char* source)
         return NULL;
     }
 
+<<<<<<< HEAD
     target = calloc(count, sizeof(WCHAR));
+=======
+    target = _glfw_calloc(count, sizeof(WCHAR));
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
     if (!MultiByteToWideChar(CP_UTF8, 0, source, -1, target, count))
     {
         _glfwInputErrorWin32(GLFW_PLATFORM_ERROR,
                              "Win32: Failed to convert string from UTF-8");
+<<<<<<< HEAD
         free(target);
+=======
+        _glfw_free(target);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
         return NULL;
     }
 
@@ -430,13 +598,21 @@ char* _glfwCreateUTF8FromWideStringWin32(const WCHAR* source)
         return NULL;
     }
 
+<<<<<<< HEAD
     target = calloc(size, 1);
+=======
+    target = _glfw_calloc(size, 1);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
     if (!WideCharToMultiByte(CP_UTF8, 0, source, -1, target, size, NULL, NULL))
     {
         _glfwInputErrorWin32(GLFW_PLATFORM_ERROR,
                              "Win32: Failed to convert string to UTF-8");
+<<<<<<< HEAD
         free(target);
+=======
+        _glfw_free(target);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
         return NULL;
     }
 
@@ -551,6 +727,7 @@ BOOL _glfwIsWindows10BuildOrGreaterWin32(WORD build)
     return RtlVerifyVersionInfo(&osvi, mask, cond) == 0;
 }
 
+<<<<<<< HEAD
 
 //////////////////////////////////////////////////////////////////////////
 //////                       GLFW platform API                      //////
@@ -566,19 +743,110 @@ int _glfwPlatformInit(void)
     SystemParametersInfoW(SPI_SETFOREGROUNDLOCKTIMEOUT, 0, UIntToPtr(0),
                           SPIF_SENDCHANGE);
 
+=======
+GLFWbool _glfwConnectWin32(int platformID, _GLFWplatform* platform)
+{
+    const _GLFWplatform win32 =
+    {
+        .platformID = GLFW_PLATFORM_WIN32,
+        .init = _glfwInitWin32,
+        .terminate = _glfwTerminateWin32,
+        .getCursorPos = _glfwGetCursorPosWin32,
+        .setCursorPos = _glfwSetCursorPosWin32,
+        .setCursorMode = _glfwSetCursorModeWin32,
+        .setRawMouseMotion = _glfwSetRawMouseMotionWin32,
+        .rawMouseMotionSupported = _glfwRawMouseMotionSupportedWin32,
+        .createCursor = _glfwCreateCursorWin32,
+        .createStandardCursor = _glfwCreateStandardCursorWin32,
+        .destroyCursor = _glfwDestroyCursorWin32,
+        .setCursor = _glfwSetCursorWin32,
+        .getScancodeName = _glfwGetScancodeNameWin32,
+        .getKeyScancode = _glfwGetKeyScancodeWin32,
+        .setClipboardString = _glfwSetClipboardStringWin32,
+        .getClipboardString = _glfwGetClipboardStringWin32,
+        .initJoysticks = _glfwInitJoysticksWin32,
+        .terminateJoysticks = _glfwTerminateJoysticksWin32,
+        .pollJoystick = _glfwPollJoystickWin32,
+        .getMappingName = _glfwGetMappingNameWin32,
+        .updateGamepadGUID = _glfwUpdateGamepadGUIDWin32,
+        .freeMonitor = _glfwFreeMonitorWin32,
+        .getMonitorPos = _glfwGetMonitorPosWin32,
+        .getMonitorContentScale = _glfwGetMonitorContentScaleWin32,
+        .getMonitorWorkarea = _glfwGetMonitorWorkareaWin32,
+        .getVideoModes = _glfwGetVideoModesWin32,
+        .getVideoMode = _glfwGetVideoModeWin32,
+        .getGammaRamp = _glfwGetGammaRampWin32,
+        .setGammaRamp = _glfwSetGammaRampWin32,
+        .createWindow = _glfwCreateWindowWin32,
+        .destroyWindow = _glfwDestroyWindowWin32,
+        .setWindowTitle = _glfwSetWindowTitleWin32,
+        .setWindowIcon = _glfwSetWindowIconWin32,
+        .getWindowPos = _glfwGetWindowPosWin32,
+        .setWindowPos = _glfwSetWindowPosWin32,
+        .getWindowSize = _glfwGetWindowSizeWin32,
+        .setWindowSize = _glfwSetWindowSizeWin32,
+        .setWindowSizeLimits = _glfwSetWindowSizeLimitsWin32,
+        .setWindowAspectRatio = _glfwSetWindowAspectRatioWin32,
+        .getFramebufferSize = _glfwGetFramebufferSizeWin32,
+        .getWindowFrameSize = _glfwGetWindowFrameSizeWin32,
+        .getWindowContentScale = _glfwGetWindowContentScaleWin32,
+        .iconifyWindow = _glfwIconifyWindowWin32,
+        .restoreWindow = _glfwRestoreWindowWin32,
+        .maximizeWindow = _glfwMaximizeWindowWin32,
+        .showWindow = _glfwShowWindowWin32,
+        .hideWindow = _glfwHideWindowWin32,
+        .requestWindowAttention = _glfwRequestWindowAttentionWin32,
+        .focusWindow = _glfwFocusWindowWin32,
+        .setWindowMonitor = _glfwSetWindowMonitorWin32,
+        .windowFocused = _glfwWindowFocusedWin32,
+        .windowIconified = _glfwWindowIconifiedWin32,
+        .windowVisible = _glfwWindowVisibleWin32,
+        .windowMaximized = _glfwWindowMaximizedWin32,
+        .windowHovered = _glfwWindowHoveredWin32,
+        .framebufferTransparent = _glfwFramebufferTransparentWin32,
+        .getWindowOpacity = _glfwGetWindowOpacityWin32,
+        .setWindowResizable = _glfwSetWindowResizableWin32,
+        .setWindowDecorated = _glfwSetWindowDecoratedWin32,
+        .setWindowFloating = _glfwSetWindowFloatingWin32,
+        .setWindowOpacity = _glfwSetWindowOpacityWin32,
+        .setWindowMousePassthrough = _glfwSetWindowMousePassthroughWin32,
+        .pollEvents = _glfwPollEventsWin32,
+        .waitEvents = _glfwWaitEventsWin32,
+        .waitEventsTimeout = _glfwWaitEventsTimeoutWin32,
+        .postEmptyEvent = _glfwPostEmptyEventWin32,
+        .getEGLPlatform = _glfwGetEGLPlatformWin32,
+        .getEGLNativeDisplay = _glfwGetEGLNativeDisplayWin32,
+        .getEGLNativeWindow = _glfwGetEGLNativeWindowWin32,
+        .getRequiredInstanceExtensions = _glfwGetRequiredInstanceExtensionsWin32,
+        .getPhysicalDevicePresentationSupport = _glfwGetPhysicalDevicePresentationSupportWin32,
+        .createWindowSurface = _glfwCreateWindowSurfaceWin32
+    };
+
+    *platform = win32;
+    return GLFW_TRUE;
+}
+
+int _glfwInitWin32(void)
+{
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
     if (!loadLibraries())
         return GLFW_FALSE;
 
     createKeyTables();
     _glfwUpdateKeyNamesWin32();
 
+<<<<<<< HEAD
     if (_glfwIsWindows10CreatorsUpdateOrGreaterWin32())
+=======
+    if (_glfwIsWindows10Version1703OrGreaterWin32())
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
         SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2);
     else if (IsWindows8Point1OrGreater())
         SetProcessDpiAwareness(PROCESS_PER_MONITOR_DPI_AWARE);
     else if (IsWindowsVistaOrGreater())
         SetProcessDPIAware();
 
+<<<<<<< HEAD
     if (!_glfwRegisterWindowClassWin32())
         return GLFW_FALSE;
 
@@ -588,17 +856,31 @@ int _glfwPlatformInit(void)
     _glfwInitTimerWin32();
     _glfwInitJoysticksWin32();
 
+=======
+    if (!createHelperWindow())
+        return GLFW_FALSE;
+
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
     _glfwPollMonitorsWin32();
     return GLFW_TRUE;
 }
 
+<<<<<<< HEAD
 void _glfwPlatformTerminate(void)
 {
+=======
+void _glfwTerminateWin32(void)
+{
+    if (_glfw.win32.blankCursor)
+        DestroyIcon((HICON) _glfw.win32.blankCursor);
+
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
     if (_glfw.win32.deviceNotificationHandle)
         UnregisterDeviceNotification(_glfw.win32.deviceNotificationHandle);
 
     if (_glfw.win32.helperWindowHandle)
         DestroyWindow(_glfw.win32.helperWindowHandle);
+<<<<<<< HEAD
 
     _glfwUnregisterWindowClassWin32();
 
@@ -609,11 +891,21 @@ void _glfwPlatformTerminate(void)
 
     free(_glfw.win32.clipboardString);
     free(_glfw.win32.rawInput);
+=======
+    if (_glfw.win32.helperWindowClass)
+        UnregisterClassW(MAKEINTATOM(_glfw.win32.helperWindowClass), _glfw.win32.instance);
+    if (_glfw.win32.mainWindowClass)
+        UnregisterClassW(MAKEINTATOM(_glfw.win32.mainWindowClass), _glfw.win32.instance);
+
+    _glfw_free(_glfw.win32.clipboardString);
+    _glfw_free(_glfw.win32.rawInput);
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
     _glfwTerminateWGL();
     _glfwTerminateEGL();
     _glfwTerminateOSMesa();
 
+<<<<<<< HEAD
     _glfwTerminateJoysticksWin32();
 
     freeLibraries();
@@ -635,4 +927,10 @@ const char* _glfwPlatformGetVersionString(void)
 #endif
         ;
 }
+=======
+    freeLibraries();
+}
+
+#endif // _GLFW_WIN32
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 

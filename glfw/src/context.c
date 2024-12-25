@@ -1,5 +1,9 @@
 //========================================================================
+<<<<<<< HEAD
 // GLFW 3.3 - www.glfw.org
+=======
+// GLFW 3.4 - www.glfw.org
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 //------------------------------------------------------------------------
 // Copyright (c) 2002-2006 Marcus Geelnard
 // Copyright (c) 2006-2016 Camilla Löwy <elmindreda@glfw.org>
@@ -24,8 +28,11 @@
 //    distribution.
 //
 //========================================================================
+<<<<<<< HEAD
 // Please use C89 style variable declarations in this file because VS 2010
 //========================================================================
+=======
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
 #include "internal.h"
 
@@ -48,6 +55,7 @@
 //
 GLFWbool _glfwIsValidContextConfig(const _GLFWctxconfig* ctxconfig)
 {
+<<<<<<< HEAD
     if (ctxconfig->share)
     {
         if (ctxconfig->client == GLFW_NO_API ||
@@ -58,6 +66,8 @@ GLFWbool _glfwIsValidContextConfig(const _GLFWctxconfig* ctxconfig)
         }
     }
 
+=======
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
     if (ctxconfig->source != GLFW_NATIVE_CONTEXT_API &&
         ctxconfig->source != GLFW_EGL_CONTEXT_API &&
         ctxconfig->source != GLFW_OSMESA_CONTEXT_API)
@@ -78,6 +88,26 @@ GLFWbool _glfwIsValidContextConfig(const _GLFWctxconfig* ctxconfig)
         return GLFW_FALSE;
     }
 
+<<<<<<< HEAD
+=======
+    if (ctxconfig->share)
+    {
+        if (ctxconfig->client == GLFW_NO_API ||
+            ctxconfig->share->context.client == GLFW_NO_API)
+        {
+            _glfwInputError(GLFW_NO_WINDOW_CONTEXT, NULL);
+            return GLFW_FALSE;
+        }
+
+        if (ctxconfig->source != ctxconfig->share->context.source)
+        {
+            _glfwInputError(GLFW_INVALID_ENUM,
+                            "Context creation APIs do not match between contexts");
+            return GLFW_FALSE;
+        }
+    }
+
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
     if (ctxconfig->client == GLFW_OPENGL_API)
     {
         if ((ctxconfig->major < 1 || ctxconfig->minor < 0) ||
@@ -356,6 +386,11 @@ GLFWbool _glfwRefreshContextAttribs(_GLFWwindow* window,
 
     previous = _glfwPlatformGetTls(&_glfw.contextSlot);
     glfwMakeContextCurrent((GLFWwindow*) window);
+<<<<<<< HEAD
+=======
+    if (_glfwPlatformGetTls(&_glfw.contextSlot) != window)
+        return GLFW_FALSE;
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
     window->context.GetIntegerv = (PFNGLGETINTEGERVPROC)
         window->context.getProcAddress("glGetIntegerv");

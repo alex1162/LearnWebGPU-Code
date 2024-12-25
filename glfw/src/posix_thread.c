@@ -1,5 +1,9 @@
 //========================================================================
+<<<<<<< HEAD
 // GLFW 3.3 POSIX - www.glfw.org
+=======
+// GLFW 3.4 POSIX - www.glfw.org
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 //------------------------------------------------------------------------
 // Copyright (c) 2002-2006 Marcus Geelnard
 // Copyright (c) 2006-2017 Camilla Löwy <elmindreda@glfw.org>
@@ -24,11 +28,19 @@
 //    distribution.
 //
 //========================================================================
+<<<<<<< HEAD
 // It is fine to use C99 in this file because it will not be built with VS
 //========================================================================
 
 #include "internal.h"
 
+=======
+
+#include "internal.h"
+
+#if defined(GLFW_BUILD_POSIX_THREAD)
+
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 #include <assert.h>
 #include <string.h>
 
@@ -103,3 +115,8 @@ void _glfwPlatformUnlockMutex(_GLFWmutex* mutex)
     pthread_mutex_unlock(&mutex->posix.handle);
 }
 
+<<<<<<< HEAD
+=======
+#endif // GLFW_BUILD_POSIX_THREAD
+
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3

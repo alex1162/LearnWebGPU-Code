@@ -1,5 +1,9 @@
 //========================================================================
+<<<<<<< HEAD
 // GLFW 3.3 POSIX - www.glfw.org
+=======
+// GLFW 3.4 POSIX - www.glfw.org
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 //------------------------------------------------------------------------
 // Copyright (c) 2002-2006 Marcus Geelnard
 // Copyright (c) 2006-2017 Camilla Löwy <elmindreda@glfw.org>
@@ -27,8 +31,13 @@
 
 #include <pthread.h>
 
+<<<<<<< HEAD
 #define _GLFW_PLATFORM_TLS_STATE    _GLFWtlsPOSIX   posix
 #define _GLFW_PLATFORM_MUTEX_STATE  _GLFWmutexPOSIX posix
+=======
+#define GLFW_POSIX_TLS_STATE    _GLFWtlsPOSIX   posix;
+#define GLFW_POSIX_MUTEX_STATE  _GLFWmutexPOSIX posix;
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
 
 // POSIX-specific thread local storage data

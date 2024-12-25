@@ -1,5 +1,9 @@
 //========================================================================
+<<<<<<< HEAD
 // GLFW 3.3 POSIX - www.glfw.org
+=======
+// GLFW 3.4 POSIX - www.glfw.org
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 //------------------------------------------------------------------------
 // Copyright (c) 2002-2006 Marcus Geelnard
 // Copyright (c) 2006-2017 Camilla Löwy <elmindreda@glfw.org>
@@ -24,6 +28,7 @@
 //    distribution.
 //
 //========================================================================
+<<<<<<< HEAD
 // It is fine to use C99 in this file because it will not be built with VS
 //========================================================================
 
@@ -56,12 +61,22 @@ void _glfwInitTimerPOSIX(void)
         _glfw.timer.posix.frequency = 1000000;
     }
 }
+=======
+
+#include "internal.h"
+
+#if defined(GLFW_BUILD_POSIX_TIMER)
+
+#include <unistd.h>
+#include <sys/time.h>
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
 
 //////////////////////////////////////////////////////////////////////////
 //////                       GLFW platform API                      //////
 //////////////////////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
 uint64_t _glfwPlatformGetTimerValue(void)
 {
 #if defined(CLOCK_MONOTONIC)
@@ -78,6 +93,25 @@ uint64_t _glfwPlatformGetTimerValue(void)
         gettimeofday(&tv, NULL);
         return (uint64_t) tv.tv_sec * (uint64_t) 1000000 + (uint64_t) tv.tv_usec;
     }
+=======
+void _glfwPlatformInitTimer(void)
+{
+    _glfw.timer.posix.clock = CLOCK_REALTIME;
+    _glfw.timer.posix.frequency = 1000000000;
+
+#if defined(_POSIX_MONOTONIC_CLOCK)
+    struct timespec ts;
+    if (clock_gettime(CLOCK_MONOTONIC, &ts) == 0)
+        _glfw.timer.posix.clock = CLOCK_MONOTONIC;
+#endif
+}
+
+uint64_t _glfwPlatformGetTimerValue(void)
+{
+    struct timespec ts;
+    clock_gettime(_glfw.timer.posix.clock, &ts);
+    return (uint64_t) ts.tv_sec * _glfw.timer.posix.frequency + (uint64_t) ts.tv_nsec;
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 }
 
 uint64_t _glfwPlatformGetTimerFrequency(void)
@@ -85,3 +119,8 @@ uint64_t _glfwPlatformGetTimerFrequency(void)
     return _glfw.timer.posix.frequency;
 }
 
+<<<<<<< HEAD
+=======
+#endif // GLFW_BUILD_POSIX_TIMER
+
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3

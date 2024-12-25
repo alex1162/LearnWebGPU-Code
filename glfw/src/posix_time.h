@@ -1,5 +1,9 @@
 //========================================================================
+<<<<<<< HEAD
 // GLFW 3.3 POSIX - www.glfw.org
+=======
+// GLFW 3.4 POSIX - www.glfw.org
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 //------------------------------------------------------------------------
 // Copyright (c) 2002-2006 Marcus Geelnard
 // Copyright (c) 2006-2017 Camilla Löwy <elmindreda@glfw.org>
@@ -25,15 +29,23 @@
 //
 //========================================================================
 
+<<<<<<< HEAD
 #define _GLFW_PLATFORM_LIBRARY_TIMER_STATE _GLFWtimerPOSIX posix
 
 #include <stdint.h>
+=======
+#define GLFW_POSIX_LIBRARY_TIMER_STATE _GLFWtimerPOSIX posix;
+
+#include <stdint.h>
+#include <time.h>
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
 
 // POSIX-specific global timer data
 //
 typedef struct _GLFWtimerPOSIX
 {
+<<<<<<< HEAD
     GLFWbool    monotonic;
     uint64_t    frequency;
 } _GLFWtimerPOSIX;
@@ -41,3 +53,9 @@ typedef struct _GLFWtimerPOSIX
 
 void _glfwInitTimerPOSIX(void);
 
+=======
+    clockid_t   clock;
+    uint64_t    frequency;
+} _GLFWtimerPOSIX;
+
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3

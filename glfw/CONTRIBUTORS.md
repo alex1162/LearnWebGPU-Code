@@ -8,11 +8,22 @@ video tutorials.
  - Bobyshev Alexander
  - Laurent Aphecetche
  - Matt Arsenault
+<<<<<<< HEAD
  - ashishgamedev
  - David Avedissian
  - Keith Bauer
  - John Bartholomew
  - Coşku Baş
+=======
+ - Takuro Ashie
+ - ashishgamedev
+ - David Avedissian
+ - Luca Bacci
+ - Keith Bauer
+ - John Bartholomew
+ - Coşku Baş
+ - Bayemite
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Niklas Behrens
  - Andrew Belt
  - Nevyn Bengtsson
@@ -31,7 +42,13 @@ video tutorials.
  - David Carlier
  - Arturo Castro
  - Chi-kwan Chan
+<<<<<<< HEAD
  - TheChocolateOre
+=======
+ - Victor Chernyakin
+ - TheChocolateOre
+ - Ali Chraghi
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Joseph Chua
  - Ian Clarkson
  - Michał Cichoń
@@ -44,6 +61,10 @@ video tutorials.
  - Bailey Cosier
  - Noel Cower
  - CuriouserThing
+<<<<<<< HEAD
+=======
+ - Bill Currie
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Jason Daly
  - danhambleton
  - Jarrod Davis
@@ -59,15 +80,27 @@ video tutorials.
  - Robin Eklind
  - Jan Ekström
  - Siavash Eliasi
+<<<<<<< HEAD
  - TheExileFox
  - Nikita Fediuchin
  - Felipe Ferreira
  - Michael Fogleman
+=======
+ - Ahmad Fatoum
+ - Nikita Fediuchin
+ - Felipe Ferreira
+ - Michael Fogleman
+ - forworldm
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Jason Francis
  - Gerald Franz
  - Mário Freitas
  - GeO4d
  - Marcus Geelnard
+<<<<<<< HEAD
+=======
+ - Gegy
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - ghuser404
  - Charles Giessen
  - Ryan C. Gordon
@@ -75,12 +108,24 @@ video tutorials.
  - Kovid Goyal
  - Kevin Grandemange
  - Eloi Marín Gratacós
+<<<<<<< HEAD
+=======
+ - Grzesiek11
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Stefan Gustavson
  - Andrew Gutekanst
  - Stephen Gutekanst
  - Jonathan Hale
+<<<<<<< HEAD
  - hdf89shfdfs
  - Sylvain Hellegouarch
+=======
+ - Daniel Hauser
+ - hdf89shfdfs
+ - Moritz Heinemann
+ - Sylvain Hellegouarch
+ - Björn Hempel
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Matthew Henry
  - heromyth
  - Lucas Hinderberger
@@ -89,6 +134,10 @@ video tutorials.
  - Warren Hu
  - Charles Huber
  - Brent Huisman
+<<<<<<< HEAD
+=======
+ - Florian Hülsmann
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - illustris
  - InKryption
  - IntellectualKitty
@@ -96,6 +145,10 @@ video tutorials.
  - JannikGM
  - Erik S. V. Jansson
  - jjYBdx4IL
+<<<<<<< HEAD
+=======
+ - Peter Johnson
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Toni Jovanoski
  - Arseny Kapoulkine
  - Cem Karan
@@ -110,6 +163,10 @@ video tutorials.
  - Rokas Kupstys
  - Konstantin Käfer
  - Eric Larson
+<<<<<<< HEAD
+=======
+ - Guillaume Lebrun
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Francis Lecavalier
  - Jong Won Lee
  - Robin Leffmann
@@ -118,12 +175,25 @@ video tutorials.
  - Anders Lindqvist
  - Leon Linhart
  - Marco Lizza
+<<<<<<< HEAD
  - Eyal Lotem
  - Aaron Loucks
  - Luflosi
  - lukect
  - Tristam MacDonald
  - Hans Mackowiak
+=======
+ - lo-v-ol
+ - Eyal Lotem
+ - Aaron Loucks
+ - Ned Loynd
+ - Luflosi
+ - lukect
+ - Tristam MacDonald
+ - Jean-Luc Mackail
+ - Hans Mackowiak
+ - Ramiro Magno
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Дмитри Малышев
  - Zbigniew Mandziejewicz
  - Adam Marcus
@@ -135,7 +205,13 @@ video tutorials.
  - Jonathan Mercier
  - Marcel Metz
  - Liam Middlebrook
+<<<<<<< HEAD
  - Ave Milia
+=======
+ - mightgoyardstill
+ - Ave Milia
+ - Icyllis Milica
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Jonathan Miller
  - Kenneth Miller
  - Bruce Mitchener
@@ -147,20 +223,43 @@ video tutorials.
  - Jon Morton
  - Pierre Moulon
  - Martins Mozeiko
+<<<<<<< HEAD
  - James Murphy
  - Julian Møller
  - ndogxj
  - F. Nedelec
  - Kristian Nielsen
  - Joel Niemelä
+=======
+ - Pascal Muetschard
+ - James Murphy
+ - Julian Møller
+ - Julius Häger
+ - Nat!
+ - NateIsStalling
+ - ndogxj
+ - F. Nedelec
+ - n3rdopolis
+ - Kristian Nielsen
+ - Joel Niemelä
+ - Victor Nova
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Kamil Nowakowski
  - onox
  - Denis Ovod
  - Ozzy
  - Andri Pálsson
+<<<<<<< HEAD
  - Peoro
  - Braden Pellett
  - Christopher Pelloux
+=======
+ - luz paz
+ - Peoro
+ - Braden Pellett
+ - Christopher Pelloux
+ - Michael Pennington
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Arturo J. Pérez
  - Vladimir Perminov
  - Olivier Perret
@@ -173,34 +272,69 @@ video tutorials.
  - Stanislav Podgorskiy
  - Konstantin Podsvirov
  - Nathan Poirier
+<<<<<<< HEAD
+=======
+ - Pokechu22
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Alexandre Pretyman
  - Pablo Prietz
  - przemekmirek
  - pthom
  - Martin Pulec
  - Guillaume Racicot
+<<<<<<< HEAD
  - Philip Rideout
  - Eddie Ringle
  - Max Risuhin
  - Jorge Rodriguez
+=======
+ - Juan Ramos
+ - Christian Rauch
+ - Philip Rideout
+ - Eddie Ringle
+ - Max Risuhin
+ - Joe Roback
+ - Jorge Rodriguez
+ - Jari Ronkainen
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Luca Rood
  - Ed Ropple
  - Aleksey Rybalkin
  - Mikko Rytkönen
  - Riku Salminen
+<<<<<<< HEAD
  - Brandon Schaefer
  - Sebastian Schuberth
+=======
+ - Yoshinori Sano
+ - Brandon Schaefer
+ - Sebastian Schuberth
+ - Scr3amer
+ - Jan Schuerkamp
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Christian Sdunek
  - Matt Sealey
  - Steve Sexton
  - Arkady Shapkin
+<<<<<<< HEAD
+=======
+ - Mingjie Shen
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Ali Sherief
  - Yoshiki Shibukawa
  - Dmitri Shuralyov
  - Joao da Silva
  - Daniel Sieger
+<<<<<<< HEAD
  - Daniel Skorupski
  - Slemmie
+=======
+ - Daljit Singh
+ - Michael Skec
+ - Daniel Skorupski
+ - Slemmie
+ - Anthony Smith
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Bradley Smith
  - Cliff Smolinsky
  - Patrick Snape
@@ -215,6 +349,11 @@ video tutorials.
  - Paul Sultana
  - Nathan Sweet
  - TTK-Bandit
+<<<<<<< HEAD
+=======
+ - Nuno Teixeira
+ - Jared Tiala
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Sergey Tikhomirov
  - Arthur Tombs
  - TronicLabs
@@ -227,10 +366,15 @@ video tutorials.
  - Jari Vetoniemi
  - Ricardo Vieira
  - Nicholas Vitovitch
+<<<<<<< HEAD
+=======
+ - Vladimír Vondruš
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Simon Voordouw
  - Corentin Wallez
  - Torsten Walluhn
  - Patrick Walton
+<<<<<<< HEAD
  - Xo Wang
  - Jay Weisskopf
  - Frank Wille
@@ -238,6 +382,18 @@ video tutorials.
  - Tatsuya Yatagawa
  - Ryogo Yoshimura
  - Rácz Zalán
+=======
+ - Jim Wang
+ - Xo Wang
+ - Andre Weissflog
+ - Jay Weisskopf
+ - Frank Wille
+ - Andy Williams
+ - Joel Winarske
+ - Richard A. Wilkes
+ - Tatsuya Yatagawa
+ - Ryogo Yoshimura
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
  - Lukas Zanner
  - Andrey Zholos
  - Aihui Zhu

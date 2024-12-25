@@ -1,5 +1,9 @@
 //========================================================================
+<<<<<<< HEAD
 // GLFW 3.3 Win32 - www.glfw.org
+=======
+// GLFW 3.4 Win32 - www.glfw.org
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 //------------------------------------------------------------------------
 // Copyright (c) 2002-2006 Marcus Geelnard
 // Copyright (c) 2006-2017 Camilla Löwy <elmindreda@glfw.org>
@@ -24,6 +28,7 @@
 //    distribution.
 //
 //========================================================================
+<<<<<<< HEAD
 // Please use C89 style variable declarations in this file because VS 2010
 //========================================================================
 
@@ -41,11 +46,25 @@ void _glfwInitTimerWin32(void)
     QueryPerformanceFrequency((LARGE_INTEGER*) &_glfw.timer.win32.frequency);
 }
 
+=======
+
+#include "internal.h"
+
+#if defined(GLFW_BUILD_WIN32_TIMER)
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 
 //////////////////////////////////////////////////////////////////////////
 //////                       GLFW platform API                      //////
 //////////////////////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
+=======
+void _glfwPlatformInitTimer(void)
+{
+    QueryPerformanceFrequency((LARGE_INTEGER*) &_glfw.timer.win32.frequency);
+}
+
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
 uint64_t _glfwPlatformGetTimerValue(void)
 {
     uint64_t value;
@@ -58,3 +77,8 @@ uint64_t _glfwPlatformGetTimerFrequency(void)
     return _glfw.timer.win32.frequency;
 }
 
+<<<<<<< HEAD
+=======
+#endif // GLFW_BUILD_WIN32_TIMER
+
+>>>>>>> b549c58221f11ebdd8f076071ebdb97f3cd608c3
